@@ -21,16 +21,16 @@
 #ifndef __vtkSlicerCustomMarkupsMarkupslogic_h_
 #define __vtkSlicerCustomMarkupsMarkupslogic_h_
 
-#include <vtkSlicerMarkupsLogic.h>
+#include <vtkSlicerModuleLogic.h>
 
 #include "vtkSlicerCustomMarkupsModuleLogicExport.h"
 
 class VTK_SLICER_CUSTOMMARKUPS_MODULE_LOGIC_EXPORT vtkSlicerCustomMarkupsLogic:
-  public vtkSlicerMarkupsLogic
+  public vtkSlicerModuleLogic
 {
 public:
   static vtkSlicerCustomMarkupsLogic* New();
-  vtkTypeMacro(vtkSlicerCustomMarkupsLogic, vtkSlicerMarkupsLogic);
+  vtkTypeMacro(vtkSlicerCustomMarkupsLogic, vtkSlicerModuleLogic);
   void PrintSelf(ostream& os, vtkIndent indent) override;
 
 protected:
