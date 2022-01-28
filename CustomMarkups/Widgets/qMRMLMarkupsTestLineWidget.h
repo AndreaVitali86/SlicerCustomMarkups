@@ -20,10 +20,16 @@
 
 #ifndef __qSlicerTestLineWidget_h_
 #define __qSlicerTestLineWidget_h_
+// Qt includes
+#include <QWidget>
 
 // Markups widgets includes
 #include "qMRMLMarkupsAbstractOptionsWidget.h"
 #include "qSlicerCustomMarkupsModuleWidgetsExport.h"
+
+// CTK includes
+#include <ctkPimpl.h>
+#include <ctkVTKObject.h>
 
 class qMRMLMarkupsTestLineWidgetPrivate;
 class vtkMRMLMarkupsNode;
@@ -32,8 +38,7 @@ class Q_SLICER_MODULE_CUSTOMMARKUPS_WIDGETS_EXPORT
 qMRMLMarkupsTestLineWidget : public qMRMLMarkupsAbstractOptionsWidget
 {
   Q_OBJECT
-
-  Q_PROPERTY(QString className READ className CONSTANT);
+  QVTK_OBJECT
 
 public:
 

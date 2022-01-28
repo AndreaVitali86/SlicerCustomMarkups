@@ -118,14 +118,6 @@ void qSlicerCustomMarkupsModule::setup()
 {
   this->Superclass::setup();
 
-  // This is a test class, therefore we do not register anything if
-  // not in testing mode (to avoid cluttering the markups module).
-  bool isTestingEnabled = qSlicerApplication::testAttribute(qSlicerCoreApplication::AA_EnableTesting);
-  if (!isTestingEnabled)
-    {
-    return;
-    }
-
   // Create and configure the options widgets
   auto optionsWidgetFactory = qMRMLMarkupsOptionsWidgetsFactory::instance();
   optionsWidgetFactory->registerOptionsWidget(new qMRMLMarkupsTestLineWidget());
@@ -140,13 +132,5 @@ qSlicerAbstractModuleRepresentation* qSlicerCustomMarkupsModule::createWidgetRep
 //-----------------------------------------------------------------------------
 vtkMRMLAbstractLogic* qSlicerCustomMarkupsModule::createLogic()
 {
-  // This is a test class, therefore we do not register anything (to avoid cluttering the markups module)
-  // unless the application is in testing mode.
-  bool isTestingEnabled = qSlicerApplication::testAttribute(qSlicerCoreApplication::AA_EnableTesting);
-  if (!isTestingEnabled)
-    {
-    return nullptr;
-    }
-
   return vtkSlicerCustomMarkupsLogic::New();
 }
